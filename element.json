@@ -1,0 +1,59 @@
+{
+    "@import": "./element.php",
+    "name": "yoo_spacer",
+    "title": "Spacer",
+    "group": "eick.it",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "width": 500,
+    "defaults": {
+        "spacer_element": "div",
+        "spacer_height": "50"
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "spacer_height": {
+            "label": "Value",
+            "description": "in px",
+            "type": "number",
+            "source": true
+        },
+        "visibility": "${builder.visibility}",
+        "name": "${builder.name}",
+        "status": "${builder.status}",
+        "source": "${builder.source}",
+        "id": "${builder.id}",
+        "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
+        "css": {
+            "label": "CSS",
+            "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>",
+            "type": "editor",
+            "editor": "code",
+            "mode": "css",
+            "attrs": {
+                "debounce": 500,
+                "hints": [".el-element"]
+            }
+        }
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "spacer_height",
+                        "visibility"
+                    ]
+                },
+                "${builder.advanced}"
+            ]
+        }
+    }
+}
