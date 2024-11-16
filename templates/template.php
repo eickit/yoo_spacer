@@ -1,5 +1,4 @@
 <?php
-
 $el = $this->el($props['spacer_element'], [
 
     'style' => [
